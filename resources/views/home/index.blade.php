@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Example page')
+@section('title', 'Home page')
 
 @section('content')
     <header class="bg-dark py-5">
@@ -20,14 +20,13 @@
                         <div class="card h-100">
                             @if($product->sale)
                                 <!-- Sale badge-->
-                                <div class="badge bg-dark text-white position-absolute"
-                                     style="top: 0.5rem; right: 0.5rem">
+                                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                     Promoção
                                 </div>
                             @endif
 
                             <!-- Product images-->
-                            <div id="productImagesCarousel{{ $product->id }}" class="carousel slide" data-bs-ride="carousel">
+                            <div id="productImagesCarousel{{ $product->id }}" class="carousel slide position-relative" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -55,6 +54,7 @@
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ $product->name }}</h5>
+                                    <h6 class="fw-light">{{ $product->brand->name }}</h6>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
@@ -81,6 +81,8 @@
                         </div>
                     </div>
                 @endforeach
+
+                {{ $products->links('layouts.pagination') }}
             </div>
         </div>
     </section>
