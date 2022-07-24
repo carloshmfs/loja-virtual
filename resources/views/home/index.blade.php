@@ -18,19 +18,12 @@
                     @php $id = '#productImagesCarousel'. $product->id; @endphp
                     <div class="col mb-5">
                         <div class="card h-100">
-                            @if($product->sale)
-                                <!-- Sale badge-->
-                                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                    Promoção
-                                </div>
-                            @endif
-
                             <!-- Product images-->
-                            <div id="productImagesCarousel{{ $product->id }}" class="carousel slide position-relative" data-bs-ride="carousel">
+                            <div id="productImagesCarousel{{ $product->id }}" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    @for($i = 0; $i < count($product->images); $i++)
+                                        <button type="button" data-bs-target="{{ $id }}" data-bs-slide-to="{{ $i }}" @if($i == 0) class="active" @endif aria-current="true" aria-label="Slide {{ $i }}"></button>
+                                    @endfor
                                 </div>
                                 <div class="carousel-inner">
                                     @foreach($product->images as $image)
@@ -38,6 +31,32 @@
                                             <img src="{{ $image->url }}" class="d-block w-100" alt="...">
                                         </div>
                                     @endforeach
+                                </div>
+                                <div class="position-absolute top-0 end-0">
+                                    @if($product->sale)
+                                        <!-- Sale badge-->
+                                        <span class="badge bg-danger text-white m-1">
+                                            Promoção
+                                        </span>
+                                    @endif
+                                    @if($product->new_product)
+                                        <!-- New badge-->
+                                        <span class="badge bg-success text-white m-1">
+                                            Novo
+                                        </span>
+                                    @endif
+                                    @if($product->featured)
+                                        <!-- Featured badge-->
+                                        <span class="badge bg-primary text-white m-1">
+                                            Destaque
+                                        </span>
+                                    @endif
+                                    @if($product->best_seller)
+                                        <!-- Best seller badge-->
+                                        <span class="badge bg-warning text-white m-1">
+                                            Mais vendido
+                                        </span>
+                                    @endif
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="{{ $id }}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,7 +73,9 @@
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ $product->name }}</h5>
+                                    <!-- Product brand-->
                                     <h6 class="fw-light">{{ $product->brand->name }}</h6>
+
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
