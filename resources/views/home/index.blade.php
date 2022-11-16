@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="carousel-inner">
                                     @foreach($product->images as $image)
-                                        <div class="carousel-item @if($loop->first) active @endif">
+                                        <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="5000">
                                             <img src="{{ $image->url }}" class="d-block w-100" alt="...">
                                         </div>
                                     @endforeach
