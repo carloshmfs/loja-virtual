@@ -87,10 +87,10 @@
                                     <!-- Product price-->
                                     De
                                     <span class="text-muted text-decoration-line-through">
-                                        {{ convertDbCurrencyToView($product->old_price) }}
+                                        {{ $product->old_price }}
                                     </span>
                                     <br>
-                                    por {{ convertDbCurrencyToView($product->price) }}
+                                    por {{ $product->price }}
                                 </div>
                             </div>
                             <!-- Product actions-->
