@@ -22,7 +22,7 @@ class ProductFactory extends Factory
             'stock' => $this->faker->randomDigit(),
             'price' => $this->faker->randomNumber(6),
             'old_price' => $this->faker->randomNumber(6),
-            'rating' => $this->faker->randomFloat(2),
+            'rating' => 0.0,
             'featured' => $this->faker->boolean(),
             'sale' => $this->faker->boolean(),
             'best_seller' => $this->faker->boolean(),
