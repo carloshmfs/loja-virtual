@@ -15,9 +15,12 @@
             <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <Product
                     v-for="product in products"
+                    :id="product.id"
                     :images="product.images"
                     :name="product.name"
+                    :brand="product.brand"
                     :price="product.price"
+                    :old_price="product.old_price"
                     />
             </div>
         </div>
@@ -25,8 +28,8 @@
 </template>
 
 <script>
-    import Header from './home/Header.vue';
-    import Product from './home/Product/Product.vue';
+    import Header from './Header.vue';
+    import Product from './Product/Product.vue';
 
     export default {
         components: {
@@ -39,9 +42,8 @@
             }
         },
         mounted() {
-            console.log('Component mounted.');
-
-            axios.get('api/products')
+            axios
+                .get('api/products')
                 .then(response => {
                     this.products = response.data.products;
                 });
