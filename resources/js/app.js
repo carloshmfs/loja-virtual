@@ -13,8 +13,11 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 
-import Root from './components/home/HomePage.vue';
-const app = createApp(Root);
+import App from './components/App.vue';
+const app = createApp(App);
+
+import router from './router/index';
+app.use(router);
 
 /**
  * Finally, we will attach the application instance to a HTML element with
