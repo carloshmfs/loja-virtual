@@ -1,5 +1,9 @@
 FROM php:8.3.6-fpm
 
+# Arguments defined in docker-compose.yml
+ARG user
+ARG uid
+
 RUN apt-get update
 RUN apt install -y apt-utils
 
@@ -35,30 +39,37 @@ RUN docker-php-ext-install \
   intl
 
 # Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- \ 
-  --install-dir=/usr/local/bin --filename=composer && chmod +x /usr/local/bin/composer 
+COPY --from=composer:2.7.4 /usr/bin/composer /usr/bin/composer
 
+# Set the default shell to bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-ENV NODE_VERSION=15.4.0
+# Create system user to run Composer and Artisan Commands
+RUN useradd -G www-data,root -u $uid -d /home/$user $user
+RUN mkdir -p /home/$user/.composer && \
+    chown -R $user:$user /home/$user
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+# RUN chown -R www-data:www-data /var/www
+# RUN chmod -R 755 /var/www/storage
 
-ENV NVM_DIR=/root/.nvm
+# Install NPM and node
+ENV NODE_VERSION=21.7.3
+ENV NVM_DIR=/home/$user/.nvm
 
+RUN mkdir -p $NVM_DIR
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
-
-COPY . /var/www
+ENV PATH="/home/$user/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 WORKDIR /var/www
 
-RUN npm install
+COPY . .
 
-RUN chown -R www-data:www-data /var/www
-RUN chmod -R 755 /var/www/storage
+# Set the user
+USER $user
 
 CMD php-fpm
 
