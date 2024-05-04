@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Http\Controllers;
+namespace App\Product\Infrastructure\Laravel\Http\Controllers;
 
+use App\Shared\Infrastructure\Laravel\Http\Controllers\Controller;
 use App\Product\Infrastructure\Eloquent\Product;
 use Illuminate\Http\JsonResponse;
 
