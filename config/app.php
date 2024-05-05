@@ -194,6 +194,7 @@ return [
         // App\Shared\Infrastructure\Laravel\Providers\BroadcastServiceProvider::class,
         App\Shared\Infrastructure\Laravel\Providers\EventServiceProvider::class,
         App\Shared\Infrastructure\Laravel\Providers\RouteServiceProvider::class,
+        App\Shared\Infrastructure\Laravel\Providers\RepositoryServiceProvider::class,
 
     ],
 
