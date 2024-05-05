@@ -2,12 +2,12 @@
 
 namespace App\Product\Infrastructure\Laravel\Http\Controllers;
 
-use App\Product\Application\UseCases\Query\GetProductsAsPagination;
-use App\Product\Domain\Repositories\ProductRepository;
-use App\Shared\Infrastructure\Laravel\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\App;
+use App\Product\Domain\Repositories\ProductRepository;
+use App\Shared\Infrastructure\Laravel\Http\Controllers\Controller;
+use App\Product\Application\UseCases\Query\GetProductsAsPagination;
 
 class ProductController extends Controller
 {

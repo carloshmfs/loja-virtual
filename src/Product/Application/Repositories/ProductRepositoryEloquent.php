@@ -2,9 +2,9 @@
 
 namespace App\Product\Application\Repositories;
 
-use App\Product\Domain\Repositories\ProductRepository;
-use App\Product\Infrastructure\Eloquent\Product;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Product\Infrastructure\Eloquent\Product;
+use App\Product\Domain\Repositories\ProductRepository;
 
 class ProductRepositoryEloquent implements ProductRepository
 {
