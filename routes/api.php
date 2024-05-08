@@ -18,4 +18,3 @@ use LojaVirtual\Product\Infrastructure\Laravel\Http\Controllers\ProductControlle
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::resource('products', ProductController::class)->names('product');

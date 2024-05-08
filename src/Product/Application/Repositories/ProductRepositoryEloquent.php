@@ -3,8 +3,8 @@
 namespace LojaVirtual\Product\Application\Repositories;
 
 use Illuminate\Pagination\LengthAwarePaginator;
-use LojaVirtual\Product\Infrastructure\Eloquent\Product;
 use LojaVirtual\Product\Domain\Repositories\ProductRepository;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\Product;
 
 class ProductRepositoryEloquent implements ProductRepository
 {

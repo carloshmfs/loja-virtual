@@ -1,10 +1,10 @@
 <?php
 
-namespace LojaVirtual\Product\Infrastructure\Eloquent;
+namespace LojaVirtual\Product\Infrastructure\Eloquent\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Brand extends Model
 {

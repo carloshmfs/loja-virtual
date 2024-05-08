@@ -1,7 +1,7 @@
 <?php
 
-use LojaVirtual\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
+use LojaVirtual\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------

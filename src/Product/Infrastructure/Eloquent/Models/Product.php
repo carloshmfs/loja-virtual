@@ -1,6 +1,6 @@
 <?php
 
-namespace LojaVirtual\Product\Infrastructure\Eloquent;
+namespace LojaVirtual\Product\Infrastructure\Eloquent\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use LojaVirtual\Product\Infrastructure\Collections\ProductCollection;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\Brand;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\ProductImage;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\ProductCategory;
+use LojaVirtual\Product\Infrastructure\Eloquent\Collections\ProductCollection;
 
 class Product extends Model
 {

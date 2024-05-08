@@ -1,6 +1,6 @@
 <?php
 
-namespace LojaVirtual\Product\Infrastructure\Laravel\Http\Controllers;
+namespace LojaVirtual\Product\Presentation\Api\Controllers;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
