@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User\Infrastructure\Eloquent;
+namespace LojaVirtual\User\Infrastructure\Eloquent;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;

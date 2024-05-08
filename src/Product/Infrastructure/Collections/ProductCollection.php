@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Product\Infrastructure\Collections;
+namespace LojaVirtual\Product\Infrastructure\Collections;
 
 use Illuminate\Database\Eloquent\Collection;
 

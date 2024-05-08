@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Product\Domain\Repositories;
+namespace LojaVirtual\Product\Domain\Repositories;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 

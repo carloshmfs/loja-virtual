@@ -189,12 +189,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Shared\Infrastructure\Laravel\Providers\AppServiceProvider::class,
-        App\Shared\Infrastructure\Laravel\Providers\AuthServiceProvider::class,
-        // App\Shared\Infrastructure\Laravel\Providers\BroadcastServiceProvider::class,
-        App\Shared\Infrastructure\Laravel\Providers\EventServiceProvider::class,
-        App\Shared\Infrastructure\Laravel\Providers\RouteServiceProvider::class,
-        App\Shared\Infrastructure\Laravel\Providers\RepositoryServiceProvider::class,
+        LojaVirtual\Shared\Infrastructure\Laravel\Providers\AppServiceProvider::class,
+        LojaVirtual\Shared\Infrastructure\Laravel\Providers\AuthServiceProvider::class,
+        // LojaVirtual\Shared\Infrastructure\Laravel\Providers\BroadcastServiceProvider::class,
+        LojaVirtual\Shared\Infrastructure\Laravel\Providers\EventServiceProvider::class,
+        LojaVirtual\Shared\Infrastructure\Laravel\Providers\RouteServiceProvider::class,
+        LojaVirtual\Shared\Infrastructure\Laravel\Providers\RepositoryServiceProvider::class,
 
     ],
 
@@ -210,7 +210,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        // 'ExampleClass' => LojaVirtual\Example\ExampleClass::class,
     ])->toArray(),
 
 ];

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Http\Middleware;
+namespace LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
+use LojaVirtual\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

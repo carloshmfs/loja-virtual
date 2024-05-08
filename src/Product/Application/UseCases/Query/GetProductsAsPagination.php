@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Product\Application\UseCases\Query;
+namespace LojaVirtual\Product\Application\UseCases\Query;
 
-use App\Product\Domain\Repositories\ProductRepository;
-use App\Shared\Domain\Query;
+use LojaVirtual\Product\Domain\Repositories\ProductRepository;
+use LojaVirtual\Shared\Domain\Query;
 
 class GetProductsAsPagination implements Query
 {

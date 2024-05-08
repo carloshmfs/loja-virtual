@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
-use App\Models\Product;
-use App\Models\ProductCategory;
-use App\Models\ProductImage;
+use LojaVirtual\Models\Brand;
+use LojaVirtual\Models\Product;
+use LojaVirtual\Models\ProductCategory;
+use LojaVirtual\Models\ProductImage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Http\Controllers;
+namespace LojaVirtual\Shared\Infrastructure\Laravel\Http\Controllers;
 
 use Illuminate\View\View;
 

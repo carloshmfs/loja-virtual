@@ -2,7 +2,7 @@
 
 namespace Product\Application\UseCases\Actions;
 
-use App\Product\Infrastructure\Eloquent\Product;
+use LojaVirtual\Product\Infrastructure\Eloquent\Product;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class UpdateProduct

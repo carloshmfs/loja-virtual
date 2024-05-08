@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\IndexController;
+use LojaVirtual\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*

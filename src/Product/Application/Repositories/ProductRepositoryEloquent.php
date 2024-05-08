@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Product\Application\Repositories;
+namespace LojaVirtual\Product\Application\Repositories;
 
 use Illuminate\Pagination\LengthAwarePaginator;
-use App\Product\Infrastructure\Eloquent\Product;
-use App\Product\Domain\Repositories\ProductRepository;
+use LojaVirtual\Product\Infrastructure\Eloquent\Product;
+use LojaVirtual\Product\Domain\Repositories\ProductRepository;
 
 class ProductRepositoryEloquent implements ProductRepository
 {

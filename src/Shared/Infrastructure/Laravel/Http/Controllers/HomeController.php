@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Http\Controllers;
+namespace LojaVirtual\Shared\Infrastructure\Laravel\Http\Controllers;
 
-use App\Product\Infrastructure\Eloquent\Product;
+use LojaVirtual\Product\Infrastructure\Eloquent\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 

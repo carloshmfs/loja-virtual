@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Purchase\Infrastructure\Eloquent;
+namespace LojaVirtual\Purchase\Infrastructure\Eloquent;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

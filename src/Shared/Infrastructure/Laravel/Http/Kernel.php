@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Infrastructure\Laravel\Http;
+namespace LojaVirtual\Shared\Infrastructure\Laravel\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -14,12 +14,12 @@ class Kernel extends HttpKernel
      * @var array<int, class-string|string>
      */
     protected $middleware = [
-        // \App\Http\Middleware\TrustHosts::class,
-        \App\Shared\Infrastructure\Laravel\Http\Middleware\TrustProxies::class,
+        // \LojaVirtual\Http\Middleware\TrustHosts::class,
+        \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
-        \App\Shared\Infrastructure\Laravel\Http\Middleware\PreventRequestsDuringMaintenance::class,
+        \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \App\Shared\Infrastructure\Laravel\Http\Middleware\TrimStrings::class,
+        \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
@@ -30,11 +30,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Shared\Infrastructure\Laravel\Http\Middleware\EncryptCookies::class,
+            \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Shared\Infrastructure\Laravel\Http\Middleware\VerifyCsrfToken::class,
+            \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -53,12 +53,12 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'auth' => \App\Shared\Infrastructure\Laravel\Http\Middleware\Authenticate::class,
+        'auth' => \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Shared\Infrastructure\Laravel\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \LojaVirtual\Shared\Infrastructure\Laravel\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
