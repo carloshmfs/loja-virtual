@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use LojaVirtual\Models\Brand;
-use LojaVirtual\Models\Product;
-use LojaVirtual\Models\ProductCategory;
-use LojaVirtual\Models\ProductImage;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\Brand;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\Product;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\ProductImage;
+use LojaVirtual\Product\Infrastructure\Eloquent\Models\ProductCategory;
 
 class ProductSeeder extends Seeder
 {
@@ -20,9 +20,6 @@ class ProductSeeder extends Seeder
     {
         Product::factory()
             ->count(64)
-            ->for(ProductCategory::factory()->create(), 'category')
-            ->for(Brand::factory()->create())
-            ->has(ProductImage::factory()->count(3), 'images')
             ->create();
     }
 }
